@@ -1,0 +1,21 @@
+{% extends 'viewdata/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="content">
+    <h1>These are all products in chocolate</h1>
+    {% for chocolate in chocolates %}
+      <div class="data_left">
+        <h2>{{ chocolate.title }}</h2>
+        <p>Von: {{ chocolate.brand }}</p>
+        <p>Kategorie: {{ chocolate.type  }}</p>
+        <p>Preis: {{ chocolate.price }} </p>
+        <p>Wertung (von 10): {{ chocolate.rating }} </p>
+      </div>
+      <div class="img_right">
+        <img src= {{ chocolate.img_url }} alt="no url"/>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

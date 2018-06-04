@@ -1,0 +1,21 @@
+{% extends 'viewdata/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="content">
+    <h1>These are all products in drinks</h1>
+    {% for drink in drinks %}
+      <div class="data_left">
+        <h2>{{ drink.title }}</h2>
+        <p>Von: {{ drink.brand }}</p>
+        <p>Kategorie: {{ drink.type  }}</p>
+        <p>Preis: {{ drink.price }} </p>
+        <p>Wertung (von 10): {{ drink.rating }} </p>
+      </div>
+      <div class="img_right">
+        <img src= {{ drink.img_url }} alt="no url"/>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

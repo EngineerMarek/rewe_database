@@ -1,0 +1,21 @@
+{% extends 'viewdata/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="content">
+    <h1>These are all products in biscuits</h1>
+    {% for biscuit in biscuits %}
+      <div class="data_left">
+        <h2>{{ biscuit.title }}</h2>
+        <p>Von: {{ biscuit.brand }}</p>
+        <p>Kategorie: {{ biscuit.type  }}</p>
+        <p>Preis: {{ biscuit.price }} </p>
+        <p>Wertung (von 10): {{ biscuit.rating }} </p>
+      </div>
+      <div class="img_right">
+        <img src= {{ biscuit.img_url }} alt="no url"/>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

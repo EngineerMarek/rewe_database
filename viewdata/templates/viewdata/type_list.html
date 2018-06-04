@@ -1,0 +1,23 @@
+{% extends 'viewdata/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="content">
+    <h1>This are all types in all</h1>
+    {% for product in products %}
+
+        <div class="data_left">
+          <h2>{{ product.title }}</h2>
+          <p>Von: {{ product.brand }}</p>
+          <p>Kategorie: {{ product.type  }}</p>
+          <p>Preis: {{ product.price }} </p>
+          <p>Wertung (von 10): {{ product.rating }} </p>
+        </div>
+        <div class="img_right">
+          <img src= {{ product.img_url }} alt="no url"/>
+        </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

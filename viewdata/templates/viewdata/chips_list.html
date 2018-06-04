@@ -1,0 +1,21 @@
+{% extends 'viewdata/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="content">
+    <h1>These are all products in chips</h1>
+    {% for chip in chips %}
+      <div class="data_left">
+        <h2>{{ chip.title }}</h2>
+        <p>Von: {{ chip.brand }}</p>
+        <p>Kategorie: {{ chip.type  }}</p>
+        <p>Preis: {{ chip.price }} </p>
+        <p>Wertung (von 10): {{ chip.rating }} </p>
+      </div>
+      <div class="img_right">
+        <img src= {{ chip.img_url }} alt="no url"/>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

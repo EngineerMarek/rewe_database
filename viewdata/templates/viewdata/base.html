@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <title>REWE FOOD DATABASE</title>
+</head>
+
+<body>
+  <header>
+      <div class="header">
+        <p><a href="{% url 'viewdata:type_list' %}">Home</a></p>
+        <p><a href="{% url 'viewdata:drink_list' %}">Drinks</a></p>
+        <p><a href="{% url 'viewdata:chocolate_list' %}">Chocolate</a></p>
+        <p><a href="{% url 'viewdata:chips_list' %}">Chips</a></p>
+        <p><a href="{% url 'viewdata:biscuit_list' %}">Biscuits</a></p>
+        <p><a href="{% url 'viewdata:other_list' %}">Other</a></p>
+        <p><a href="{% url 'admin:index' %}">Admin</a></p>
+      </div>
+  </header>
+  <div class="main">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+
+</html>
